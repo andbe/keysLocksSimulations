@@ -32,8 +32,8 @@ locks = 7
 n.sims = 10000
 
 for(t in 1:n.sims){
-  trialsA = c(trialsA, stratA())
-  trialsB = c(trialsB, stratB())
+  trialsA = c(trialsA, stratA(keys, locks))
+  trialsB = c(trialsB, stratB(keys, locks))
 }
 
 df = data.frame(
