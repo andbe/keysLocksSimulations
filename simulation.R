@@ -1,11 +1,13 @@
+# Fastest way to open one lock
+
 library(ggplot2)
 library(magrittr)
 library(dplyr)
 
 stratA = function(keys = 50, locks = 7){
   keys = 1:keys
-  locks = sample(keys, locks)
-  lock = sample(locks, 1, replace = FALSE)
+  locks = sample(keys, locks, replace = FALSE)
+  lock = sample(locks, 1)
   trials = 1
   for(i in keys){
     if(i == lock) return(trials)
